@@ -5,6 +5,19 @@ Reproducible text-to-video inference baseline: **Wan2.1-T2V-1.3B** served by
 fixed prompt, fixed seed, fixed shape, concurrency 1 — that future
 optimizations get compared against.
 
+## ▶ Demo
+
+**Prompt:** *"A cinematic shot of a lone hiker walking through a misty Himalayan valley at sunrise"* — 832×480, seed 42.
+
+| Baseline — 81 frames @ 16 fps, 20 steps (58.3 s on RTX 5090) | Smoke test — 33 frames |
+|:---:|:---:|
+| ![baseline demo](docs/baseline.gif) | ![smoke demo](docs/smoke.gif) |
+
+▶ **Full-quality MP4s:** [baseline](https://github.com/pritamkumarravi/wan21-bench/releases/download/v0.1.0-baseline/wan21-baseline-832x480-81f-seed42.mp4) ·
+[smoke](https://github.com/pritamkumarravi/wan21-bench/releases/download/v0.1.0-baseline/wan21-smoke-33f-seed42.mp4)
+(also playable in-repo under [`outputs/`](outputs/20260928_055926/)). All 5 measured videos from the run are
+bitwise identical — same bytes, same md5.
+
 ## Recorded baseline
 
 Single NVIDIA RTX 5090 32GB · Ubuntu 24.04 · Python 3.12.3 · torch 2.13.0+cu132 ·
@@ -36,6 +49,7 @@ All 5 measured videos are **bitwise identical**
 ├── outputs/
 │   ├── 20260928_055926/        # the 6 generated MP4s + response headers
 │   └── smoke/                  # smoke-test clip (33 frames)
+├── docs/                       # README demo GIFs (from the baseline run)
 ├── scripts/
 │   ├── setup.sh                # deps + venv + vllm 0.30.0 + vllm-omni + model + env capture
 │   ├── start_server.sh         # vllm serve --omni on :8091 inside tmux (idempotent)
