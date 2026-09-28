@@ -1,4 +1,4 @@
-# ignore heavy/untracked runtime state
+# heavy runtime state (recreated by scripts/setup.sh)
 .venv/
 .hf-cache/
 __pycache__/
@@ -7,10 +7,15 @@ __pycache__/
 # framework source (cloned by scripts/setup.sh)
 vllm-omni/
 
-# runtime artifacts (never delete previous results)
+# raw server logs (kept locally, not committed)
 logs/
-outputs/
-benchmarks/results/
+
+# future runs land here untracked; recorded runs are opted in below
+benchmarks/results/*
+!benchmarks/results/20260928_055926/
+outputs/*
+!outputs/20260928_055926/
+!outputs/smoke/
 *.stop
 
 # OS

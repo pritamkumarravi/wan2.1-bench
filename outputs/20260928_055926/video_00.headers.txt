@@ -1,0 +1,12 @@
+HTTP/1.1 200 OK
+date: Mon, 28 Sep 2026 06:00:24 GMT
+server: uvicorn
+x-request-id: video_sync-8167be8f95941f72
+x-model: Wan-AI/Wan2.1-T2V-1.3B-Diffusers
+x-inference-time-s: 57.980
+x-stage-durations: {"queue_wait_ms":0.10960688814520836,"stage_0_gen_ms":57918.05171966553}
+x-peak-memory-mb: 21296.000
+content-length: 744604
+content-type: video/mp4
+vary: Origin
+
