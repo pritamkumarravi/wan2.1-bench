@@ -46,6 +46,7 @@ All 5 measured videos are **bitwise identical**
 │   ├── config/environment.json # captured hardware/software provenance
 │   └── results/20260928_055926/  # recorded run: requests.jsonl, gpu_metrics.csv,
 │                                # summary.json, stdout.log, environment, server cmd
+├── prompts/                    # Jinja2 prompt templates (.j2) — see prompts/README.md
 ├── outputs/
 │   ├── 20260928_055926/        # the 6 generated MP4s + response headers
 │   └── smoke/                  # smoke-test clip (33 frames)
@@ -57,6 +58,7 @@ All 5 measured videos are **bitwise identical**
 │   ├── smoke_test.sh           # 1 request + ffprobe validation
 │   ├── baseline.sh             # warmup + measured runs + telemetry + summary
 │   ├── collect_gpu_metrics.sh  # nvidia-smi sampler (200 ms)
+│   ├── render_prompt.py        # Jinja2 prompt renderer (strict vars)
 │   ├── summarize.py            # summary.json / README.md generator
 │   └── server_env.sh           # shared port/session paths
 ├── logs/                       # server log (local only, not committed)
@@ -85,6 +87,14 @@ opted in via `.gitignore` exceptions.
 - ≥100 GB disk (model ≈ 25 GB, wheels ≈ 15 GB)
 - Software pair is pinned by the vLLM-Omni repo itself: **vLLM 0.30.0** with
   the matching vLLM-Omni source checkout (`docs/getting_started/quickstart.md`)
+
+## Prompts
+
+Prompt text lives in **Jinja2 templates** under [`prompts/`](prompts/), selected
+via `prompt_template` + `prompt_vars` in `benchmarks/config/baseline.json`.
+The baseline template with no variables reproduces the recorded control prompt
+byte-for-byte, and `scripts/baseline.sh` fails the run if rendering ever
+drifts from the recorded literal. See [`prompts/README.md`](prompts/README.md).
 
 ## Notes
 

@@ -22,7 +22,13 @@ fi
 echo "[smoke] server reachable on :${SERVER_PORT}"
 
 # --- 2. one small request (33 frames keeps the smoke test fast) ------------
-PROMPT="$(jq -r .prompt "$CFG")"
+PROMPT_TEMPLATE="$(jq -r '.prompt_template // ""' "$CFG")"
+if [ -n "$PROMPT_TEMPLATE" ]; then
+    PROMPT="$(python3 "${ROOT}/scripts/render_prompt.py" \
+        "${ROOT}/${PROMPT_TEMPLATE}" "$(jq -c '.prompt_vars // {}' "$CFG")")"
+else
+    PROMPT="$(jq -r .prompt "$CFG")"
+fi
 code="$(curl -sS -o "$VID" -D "$HDRS" -w '%{http_code}' \
     -X POST "http://127.0.0.1:${SERVER_PORT}/v1/videos/sync" \
     -F "prompt=${PROMPT}" \

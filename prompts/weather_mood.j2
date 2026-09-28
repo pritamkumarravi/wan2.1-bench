@@ -1,0 +1,10 @@
+{# Weather / time-of-day mood variation on the baseline scene.
+
+   Variables (all optional, defaults shown):
+     subject — what/who is in frame
+     region  — location
+     weather — misty | rain-soaked | snow-covered | storm-lit …
+     mood    — serene | dramatic | melancholic | triumphant …
+     time_of_day — sunrise | blue hour | noon | dusk …
+#}
+A cinematic shot of {{ subject | default("a lone hiker") }} walking through a {{ weather | default("misty") }} {{ region | default("Himalayan valley") }} at {{ time_of_day | default("sunrise") }}, {{ mood | default("serene") }} atmosphere, volumetric light, natural color grading

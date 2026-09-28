@@ -13,7 +13,24 @@ CFG="${ROOT}/${BASELINE_CONFIG}"
 
 # ---------------- config ----------------------------------------------------
 MODEL="$(jq -r .model "$CFG")"
-PROMPT="$(jq -r .prompt "$CFG")"
+
+# Render the prompt from its Jinja2 template (prompts/*.j2). The recorded
+# literal "prompt" is the provenance reference: if both exist they must match
+# byte-for-byte, otherwise the control experiment would silently drift.
+PROMPT_TEMPLATE="$(jq -r '.prompt_template // ""' "$CFG")"
+if [ -n "$PROMPT_TEMPLATE" ]; then
+    PROMPT="$(python3 "${ROOT}/scripts/render_prompt.py" \
+        "${ROOT}/${PROMPT_TEMPLATE}" "$(jq -c '.prompt_vars // {}' "$CFG")")"
+    RECORDED_PROMPT="$(jq -r '.prompt // ""' "$CFG")"
+    if [ -n "$RECORDED_PROMPT" ] && [ "$PROMPT" != "$RECORDED_PROMPT" ]; then
+        echo "ERROR: rendered prompt from ${PROMPT_TEMPLATE} does not match the recorded prompt in ${BASELINE_CONFIG}" >&2
+        echo "  rendered: ${PROMPT}" >&2
+        echo "  recorded: ${RECORDED_PROMPT}" >&2
+        exit 1
+    fi
+else
+    PROMPT="$(jq -r .prompt "$CFG")"
+fi
 WIDTH="$(jq -r .width "$CFG")"
 HEIGHT="$(jq -r .height "$CFG")"
 NUM_FRAMES="$(jq -r .num_frames "$CFG")"
@@ -41,6 +58,7 @@ echo "=== baseline run ${STAMP} ==="
 cp benchmarks/config/environment.json "${RESDIR}/environment.json"
 cp "$CFG" "${RESDIR}/config.json"
 [ -f logs/server_cmd.txt ] && cp logs/server_cmd.txt "${RESDIR}/server_cmd.txt"
+printf '%s\n' "$PROMPT" > "${RESDIR}/prompt.txt"
 
 # ---------------- Phase B: server health check -------------------------------
 health() {

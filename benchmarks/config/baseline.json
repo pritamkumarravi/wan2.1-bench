@@ -1,6 +1,8 @@
 {
   "model": "Wan-AI/Wan2.1-T2V-1.3B-Diffusers",
   "prompt": "A cinematic shot of a lone hiker walking through a misty Himalayan valley at sunrise",
+  "prompt_template": "prompts/baseline.j2",
+  "prompt_vars": {},
   "width": 832,
   "height": 480,
   "num_frames": 81,

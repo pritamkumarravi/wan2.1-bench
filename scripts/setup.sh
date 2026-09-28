@@ -72,6 +72,9 @@ fi
 log "installing vllm-omni from source (editable)"
 uv pip install -e ./vllm-omni
 
+# Prompt rendering (scripts/render_prompt.py)
+python -c 'import jinja2' 2>/dev/null || { log "installing jinja2"; uv pip install jinja2; }
+
 # ---------------------------------------------------------------- 5. verify
 log "verifying torch/vllm/vllm-omni"
 python - <<'PY'
