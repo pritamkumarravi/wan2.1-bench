@@ -1,0 +1,17 @@
+# ignore heavy/untracked runtime state
+.venv/
+.hf-cache/
+__pycache__/
+*.pyc
+
+# framework source (cloned by scripts/setup.sh)
+vllm-omni/
+
+# runtime artifacts (never delete previous results)
+logs/
+outputs/
+benchmarks/results/
+*.stop
+
+# OS
+.DS_Store

@@ -1,0 +1,144 @@
+{
+  "phase": "warmup",
+  "label": "warmup",
+  "request_id": "video_sync-a79b55d85a92e54c",
+  "start_time": "1790575166.872970621",
+  "end_time": "1790575224.483662987",
+  "wall_clock_latency_s": 57.610693,
+  "http_status": 200,
+  "curl_rc": 0,
+  "output_file": "outputs/20260928_055926/video_warmup.mp4",
+  "output_size_bytes": 744604,
+  "x_inference_time_s": 57.590,
+  "x_model": "Wan-AI/Wan2.1-T2V-1.3B-Diffusers",
+  "md5": "d3779da05333e880361b57208618d5e7",
+  "validation": {
+    "valid": true,
+    "codec": "h264",
+    "width": 832,
+    "height": 480,
+    "frame_count": 81,
+    "fps": "16/1",
+    "duration_s": 5.062500
+  }
+}
+{
+  "phase": "measured",
+  "label": "00",
+  "request_id": "video_sync-8167be8f95941f72",
+  "start_time": "1790575225.073994063",
+  "end_time": "1790575283.075464629",
+  "wall_clock_latency_s": 58.001471,
+  "http_status": 200,
+  "curl_rc": 0,
+  "output_file": "outputs/20260928_055926/video_00.mp4",
+  "output_size_bytes": 744604,
+  "x_inference_time_s": 57.980,
+  "x_model": "Wan-AI/Wan2.1-T2V-1.3B-Diffusers",
+  "md5": "d3779da05333e880361b57208618d5e7",
+  "validation": {
+    "valid": true,
+    "codec": "h264",
+    "width": 832,
+    "height": 480,
+    "frame_count": 81,
+    "fps": "16/1",
+    "duration_s": 5.062500
+  }
+}
+{
+  "phase": "measured",
+  "label": "01",
+  "request_id": "video_sync-9ab338b3045aced8",
+  "start_time": "1790575283.159128426",
+  "end_time": "1790575341.464437883",
+  "wall_clock_latency_s": 58.305310,
+  "http_status": 200,
+  "curl_rc": 0,
+  "output_file": "outputs/20260928_055926/video_01.mp4",
+  "output_size_bytes": 744604,
+  "x_inference_time_s": 58.284,
+  "x_model": "Wan-AI/Wan2.1-T2V-1.3B-Diffusers",
+  "md5": "d3779da05333e880361b57208618d5e7",
+  "validation": {
+    "valid": true,
+    "codec": "h264",
+    "width": 832,
+    "height": 480,
+    "frame_count": 81,
+    "fps": "16/1",
+    "duration_s": 5.062500
+  }
+}
+{
+  "phase": "measured",
+  "label": "02",
+  "request_id": "video_sync-ae5592dbb3b3e833",
+  "start_time": "1790575341.551664016",
+  "end_time": "1790575399.860921840",
+  "wall_clock_latency_s": 58.309258,
+  "http_status": 200,
+  "curl_rc": 0,
+  "output_file": "outputs/20260928_055926/video_02.mp4",
+  "output_size_bytes": 744604,
+  "x_inference_time_s": 58.288,
+  "x_model": "Wan-AI/Wan2.1-T2V-1.3B-Diffusers",
+  "md5": "d3779da05333e880361b57208618d5e7",
+  "validation": {
+    "valid": true,
+    "codec": "h264",
+    "width": 832,
+    "height": 480,
+    "frame_count": 81,
+    "fps": "16/1",
+    "duration_s": 5.062500
+  }
+}
+{
+  "phase": "measured",
+  "label": "03",
+  "request_id": "video_sync-b01c81efda11ce2e",
+  "start_time": "1790575399.947892641",
+  "end_time": "1790575458.427352660",
+  "wall_clock_latency_s": 58.479460,
+  "http_status": 200,
+  "curl_rc": 0,
+  "output_file": "outputs/20260928_055926/video_03.mp4",
+  "output_size_bytes": 744604,
+  "x_inference_time_s": 58.458,
+  "x_model": "Wan-AI/Wan2.1-T2V-1.3B-Diffusers",
+  "md5": "d3779da05333e880361b57208618d5e7",
+  "validation": {
+    "valid": true,
+    "codec": "h264",
+    "width": 832,
+    "height": 480,
+    "frame_count": 81,
+    "fps": "16/1",
+    "duration_s": 5.062500
+  }
+}
+{
+  "phase": "measured",
+  "label": "04",
+  "request_id": "video_sync-998b93f64d231f73",
+  "start_time": "1790575458.515407567",
+  "end_time": "1790575516.875807314",
+  "wall_clock_latency_s": 58.360400,
+  "http_status": 200,
+  "curl_rc": 0,
+  "output_file": "outputs/20260928_055926/video_04.mp4",
+  "output_size_bytes": 744604,
+  "x_inference_time_s": 58.339,
+  "x_model": "Wan-AI/Wan2.1-T2V-1.3B-Diffusers",
+  "md5": "d3779da05333e880361b57208618d5e7",
+  "validation": {
+    "valid": true,
+    "codec": "h264",
+    "width": 832,
+    "height": 480,
+    "frame_count": 81,
+    "fps": "16/1",
+    "duration_s": 5.062500
+  }
+}

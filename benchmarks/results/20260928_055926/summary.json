@@ -1,0 +1,29 @@
+{
+  "run": "20260928_055926",
+  "n_warmup": 1,
+  "n_measured": 5,
+  "n_valid_videos": 5,
+  "latency_s": {
+    "mean": 58.291,
+    "median": 58.309,
+    "min": 58.001,
+    "max": 58.479,
+    "p50": 58.309,
+    "p95": 58.479,
+    "p95_note": "p95 is statistically weak with only 5 samples (nearest-rank: p95 == max)"
+  },
+  "server_reported_inference_time_s": {
+    "mean": 58.27
+  },
+  "measured_phase_wall_s": 291.802,
+  "videos_per_second": 0.0171,
+  "frames_per_second_generated": 1.39,
+  "gpu": {
+    "peak_vram_mb": 22249.0,
+    "avg_gpu_utilization": 99.2,
+    "peak_gpu_utilization": 100.0,
+    "samples": 1302
+  },
+  "gpu_note": "peak_vram includes the resident server (model + CUDA context), not just per-request delta",
+  "all_valid": true
+}

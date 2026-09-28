@@ -1,0 +1,27 @@
+{
+  "timestamp": "2026-09-28T05:49:29.362159+00:00",
+  "hostname": "fb817c417b96",
+  "os": "Ubuntu 24.04.4 LTS",
+  "kernel": "6.8.0-138-generic",
+  "cpu_count": 32,
+  "gpu": {
+    "name": "NVIDIA GeForce RTX 5090",
+    "vram": "32607 MiB",
+    "driver": "595.91.07"
+  },
+  "cuda_version_torch": "13.2",
+  "python": "3.12.3",
+  "torch": "2.13.0+cu132",
+  "vllm": "0.30.0",
+  "vllm_omni": {
+    "version": "0.1.dev1+gf5bdb20e9",
+    "git_sha": "f5bdb20e9d3a2804d0cdd53f30c01b0839247ad2"
+  },
+  "model": {
+    "id": "Wan-AI/Wan2.1-T2V-1.3B-Diffusers",
+    "revision": "0fad780a534b6463e45facd96134c9f345acfa5b"
+  },
+  "env_vars": {
+    "HF_HOME": "/root/wan21-bench/.hf-cache"
+  }
+}

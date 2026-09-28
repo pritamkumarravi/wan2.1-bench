@@ -1,0 +1,30 @@
+=== baseline run 20260928_055926 ===
+[phase B] server healthy on :8091
+[phase C] warmup: 1 request(s) (excluded from statistics)
+[warmup 1/1] generating 81 frames @ 832x480, 20 steps ...
+[warmup 1/1] HTTP 200, wall 57.6s
+[phase D] measured: 5 request(s), concurrency 1
+[measured 1/5] generating ...
+[measured 1/5] HTTP 200, wall 58.0s, valid=true
+[measured 2/5] generating ...
+[measured 2/5] HTTP 200, wall 58.3s, valid=true
+[measured 3/5] generating ...
+[measured 3/5] HTTP 200, wall 58.3s, valid=true
+[measured 4/5] generating ...
+[measured 4/5] HTTP 200, wall 58.5s, valid=true
+[measured 5/5] generating ...
+[measured 5/5] HTTP 200, wall 58.4s, valid=true
+[gpu-metrics] wrote 1302 samples to /root/wan21-bench/benchmarks/results/20260928_055926/gpu_metrics.csv (interval 0.2s)
+[phase E] computing summary
+Traceback (most recent call last):
+  File "<stdin>", line 5, in <module>
+  File "/usr/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
